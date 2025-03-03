@@ -29,9 +29,10 @@ pmsm.perf.phi = 0.03;     % V*s/rad
 
 % parámetros de los observadores
 theta_obs_gain = 2e6;
-flux_obs_gain = 2e5;
-speed_obs.ki = 7000;
-speed_obs.kp = 700;
+flux_obs_gain = 4e4;
+speed_obs.ki = 150000;
+speed_obs.kp = 100000;
+current_limit = 300;
 
 
 % Condiciones nominales
@@ -41,7 +42,7 @@ R_pmp = 0.1;                 % radio del impulsor
 P_nom = P_pmp/E_pmp;         % W      
 W_nom_r = W_nom *2*pi/60;       % velocidad nominal 1/s
 T_nom = P_nom/W_nom_r;         % N.m
-Q_nom = 7;                   % MPa
+Q_nom = 0.7;                   % MPa
 
 % fluido
 rng = 0:0.1:1.2;
